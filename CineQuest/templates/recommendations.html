@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineQuest - Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="background">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="brand-container">
+            <h1 class="brand">CineQuest</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('logout') }}" class="button logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Recommendations Section -->
+    <div class="container recommendations-container">
+        <h2>Your Recommended Movies</h2>
+        <ul class="recommendations-list">
+            {% for movie in movies %}
+                <li class="recommendation-item">
+                    <span>{{ movie }}</span>
+                    <a href="{{ url_for('movie_details', movie_title=movie) }}" class="button details">Show Details</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div class="button-container">
+            <form action="{{ url_for('change_preferences') }}" method="get">
+                <button type="submit" class="form-button">Change Preferences</button>
+            </form>
+            <form action="{{ url_for('recommendations') }}" method="post">
+                <button type="submit" class="form-button">Get More Recommendations</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

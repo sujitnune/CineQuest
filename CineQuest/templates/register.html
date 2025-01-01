@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineQuest - Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="background">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="brand-container">
+            <h1 class="brand">CineQuest</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}" class="button login">Login</a></li>
+            <li><a href="{{ url_for('contact') }}">Need help? Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Register Form Section -->
+    <div class="container form-container">
+        <h2>Register</h2>
+
+        <!-- Flash Messages for Register Errors or Success -->
+        {% with messages = get_flashed_messages(category_filter=['register_error', 'register_success']) %}
+            {% if messages %}
+                <ul class="flash-messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" class="register-form">
+            <input type="text" name="username" placeholder="Username" required class="form-input">
+            <input type="password" name="password" placeholder="Password" required class="form-input">
+            <button type="submit" class="form-button">Register</button>
+        </form>
+        <p>Already have an account? <a href="{{ url_for('login') }}" class="link">Login here</a></p>
+    </div>
+</body>
+</html>

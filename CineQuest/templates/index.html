@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineQuest</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="background">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="brand-container">
+            <h1 class="brand">CineQuest</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('login') }}" class="button login">Login</a></li>
+            <li><a href="{{ url_for('register') }}" class="button register">Register</a></li>
+            <li><a href="{{ url_for('contact') }}">Need help? Contact Us</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Welcome Text and Image Container -->
+    <div class="container">
+        <div class="welcome-text">
+            <h2>Welcome to CineQuest</h2>
+            <p>Your personalized movie recommendation system!</p>
+        </div>
+        <div class="image-gallery">
+            <img src="{{ url_for('static', filename='image1.jpg') }}" alt="Movie Image 1">
+            <img src="{{ url_for('static', filename='image3.jpeg') }}" alt="Movie Image 2">
+            <img src="{{ url_for('static', filename='image4.jpeg') }}" alt="Movie Image 3">
+            <img src="{{ url_for('static', filename='image6.jpeg') }}" alt="Movie Image 4">
+        </div>
+    </div>
+</body>
+</html>
