@@ -1,3 +1,15 @@
-Abstract:
+# 🎬 CineQuest: Personalized Movie Recommendation System
 
-CineQuest is a sophisticated movie recommendation system designed to provide personalized film suggestions based on individual user preferences. By seamlessly integrating content-based filtering, CineQuest delivers recommendations that align with users' tastes and viewing history. Users can specify their favorite genres, actors, and actresses, allowing CineQuest to tailor suggestions that highlight films featuring their preferred genres or starring their favorite performers, and doesn’t recommend previously recommended movies.
+**CineQuest** is a personalized movie recommendation system that delivers tailored suggestions based on user preferences, including favorite genres, actors, directors, and viewing history. Built using content-based filtering and advanced natural language processing techniques, CineQuest helps users discover relevant and diverse movie options without the overwhelm.
+
+---
+
+## 🚀 Features
+
+- 🎯 Personalized movie recommendations
+- 🎭 Preference-based filtering (genres, actors, directors)
+- 📜 History-aware suggestion engine
+- 🧠 TF-IDF + Cosine Similarity for content matching
+- ❌ No repeated recommendations
+- 🗂️ Persistent user data and movie metadata with SQLite
+- 🌐 Intuitive web interface built with Flask
